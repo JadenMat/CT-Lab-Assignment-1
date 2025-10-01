@@ -250,11 +250,12 @@ nav a:hover{
 }
 
 .upper-leg {
-    max-width: 185px;
     position: absolute;
-    top: 600px;
-    right: 738px;
-    animation: upper-leg-swing 2s ease-in-out infinite;
+    width: 39%;      /* relative to .Figure */
+    top: 60.5%;        /* % of .Figure height */
+    left: 9%;       /* % of .Figure width */
+    /* animation: upper-leg-swing 2s ease-in-out infinite; */
+    transform-origin: center; /* keeps rotations natural */
 }
 
 @keyframes upper-leg-swing {
@@ -264,11 +265,13 @@ nav a:hover{
 }
 
 .lower-leg {
-    max-width: 145px;
     position: absolute;
-    top: 655px;
-    right: 780px;
-    animation: lower-leg-swing 2s ease-in-out infinite;
+    width: 35%;      /* relative to .Figure */
+    top: 68%;        /* % of .Figure height */
+    left: 8%;       /* % of .Figure width */
+    transform: rotate(2deg);
+    /* animation: lower-leg-swing 2s ease-in-out infinite; */
+    transform-origin: center; /* keeps rotations natural */
 }
 
 @keyframes lower-leg-swing {
@@ -278,11 +281,13 @@ nav a:hover{
 }
 
 .feet {
-    max-width: 100px;
     position: absolute;
-    top: 675px;
-    right: 895px;
-    animation: feet-slide 2s ease-in-out infinite;
+    width: 25%;      /* relative to .Figure */
+    top: 72%;        /* % of .Figure height */
+    right: 85%;       /* % of .Figure width */
+    transform: rotate(-8deg);
+    /* animation: feet-slide 2s ease-in-out infinite; */
+    transform-origin: center; /* keeps rotations natural */
 }
 
 @keyframes feet-slide {
