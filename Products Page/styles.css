@@ -19,9 +19,15 @@ nav ul{
     z-index: 1000;
 }
 
-a {
+nav a {
     color:aliceblue;
     text-decoration: none;
+}
+
+/* used ai for this part; wanted a short term solution
+how would you go about this is js */
+nav a:hover{
+    color: lightgray;
 }
 
 .grid-container{
@@ -39,23 +45,31 @@ a {
 }
 
 .content {
-    /* padding-top: 60px; */
     margin-top: 60px;
-    position:relative;
+    position: relative;
     width: 100vw;
-    height: 100vh;
-    background-color: white;
+    height: auto; /* let aspect ratio handle height */
     grid-area: content;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: black;
     
 }
 
+.animation {
+    position: relative;
+    width: 80vw;          /* responsive to viewport width */
+    aspect-ratio: 16/9;   /* lock your scene ratio (adjust to match your art) */
+    max-width: 1200px;    /* optional: prevent being too big */
+    overflow: hidden;
+    background-color: white;
+}
+
 .shadow-lights3 {
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
     position: absolute;
     z-index: 0;
@@ -64,39 +78,47 @@ a {
 .film-border3 {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: contain;
   display: block;
   position: absolute;
   z-index: 1;
 }
 
 .Environment3 {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    width: 40%;
+    top: 20%;
+    left: 30%; 
+    margin:0 auto;
+    aspect-ratio: 3/4;
     z-index: 2;
 }
 
 .lamp-3 {
-    max-width: 22.25vw;
     position: absolute;
-    top:-3.5vh;
-    right:39.9vw;
+    width: 57.5%;      /* relative to .Figure */
+    bottom: 83%;        /* % of .Figure height */
+    left: 19.5%;       /* % of .Figure width */
 }
 
-.figure3 {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.Figure3 {
+    position: absolute;
+    width: 40%;
+    top: 20%;  /* relative to .content */
+    left: 30%; /* relative to .content */
+    margin:0 auto;
+    aspect-ratio: 3/4;
     z-index: 2;
 }
 
 .head3 {
-    max-width: 100px;
     position: absolute;
-    top: 245px;
-    right: 660px;
-    animation: head-lean-back 5s ease-in-out infinite;
+    width: 20%;      /* relative to .Figure */
+    top: 9%;        /* % of .Figure height */
+    left: 25%;       /* % of .Figure width */
+    transform: rotate(-7deg);
+    /* animation: head-lean-back 2s ease-in-out infinite; */
+    transform-origin: center; /* keeps rotations natural */
 }
 
 @keyframes head-lean-back {
@@ -106,12 +128,13 @@ a {
 }
 
 .torso3 {
-    max-width: 210px;
     position: absolute;
-    top:302px;
-    right:635px;
-    transform: rotate(2deg);
-    animation: torso-lean-back 5s ease-in-out infinite;
+    width: 40%;      /* relative to .Figure */
+    top: 18%;        /* % of .Figure height */
+    left: 10%;       /* % of .Figure width */
+    transform: rotate(-1deg);
+    /* animation: torso-lean-back 2s ease-in-out infinite; */
+    transform-origin: center; /* keeps rotations natural */
 }
 
 @keyframes torso-lean-back {
@@ -121,82 +144,102 @@ a {
 }
 
 .upper-right-arm3 {
-    max-width: 110px;
     position: absolute;
-    top:325px;
-    right:670px;
-    transform: rotate(20deg)
+    width: 20%;      /* relative to .Figure */
+    top: 25%;        /* % of .Figure height */
+    left: 23%;       /* % of .Figure width */
+    transform: rotate(25deg);
+    /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
+    transform-origin: center; /* keeps rotations natural */
 }
 
 .lower-right-arm3 {
-    max-width: 80px;
     position: absolute;
-    top:430px;
-    right:650px;
-    transform: rotate(75deg)
+    width: 20%;      /* relative to .Figure */
+    top: 36%;        /* % of .Figure height */
+    left: 27%;       /* % of .Figure width */
+    transform: rotate(90deg);
+    /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
+    transform-origin: center; /* keeps rotations natural */
 }
 
 .right-hand3 {
-    max-width: 50px;
     position: absolute;
-    top:480px;
-    right:635px;
-    transform: rotate(90deg);
+    width: 10%;      /* relative to .Figure */
+    top: 48%;        /* % of .Figure height */
+    left: 37%;       /* % of .Figure width */
+    transform: rotate(110deg);
+    /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
+    transform-origin: center; /* keeps rotations natural */
 }
 
 .hammer3 {
-    max-width: 68px;
     position: absolute;
-    top:470px;
-    right:620px;
-    transform: rotate(88deg);
+    width: 16%;      /* relative to .Figure */
+    top: 46%;        /* % of .Figure height */
+    left: 37%;       /* % of .Figure width */
+    transform: rotate(105deg);
+    /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
+    transform-origin: center; /* keeps rotations natural */
 }
 
 .upper-left-arm3 {
-    max-width: 110px;
     position: absolute;
-    top: 345px;
-    right:665px;
-    transform: rotate(25deg);
+    width: 20%;      /* relative to .Figure */
+    top: 22%;        /* % of .Figure height */
+    left: 18%;       /* % of .Figure width */
+    transform: rotate(50deg);
+    /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
+    transform-origin: center; /* keeps rotations natural */
 }
 
 .lower-left-arm3 {
-    max-width: 100px;
     position: absolute;
-    top:405px;
-    right:675px;
-    transform: rotate(95deg);
+    width: 20%;      /* relative to .Figure */
+    top: 35%;        /* % of .Figure height */
+    left: 18%;       /* % of .Figure width */
+    transform: rotate(110deg);
+    /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
+    transform-origin: center; /* keeps rotations natural */
 }
 
 .left-hand3 {
-    max-width: 75px;
     position: absolute;
-    top:475px;
-    right:665px;
-    transform: rotate(65deg);
+    width: 16%;      /* relative to .Figure */
+    top: 47%;        /* % of .Figure height */
+    left: 20%;       /* % of .Figure width */
+    transform: rotate(95deg);
+    /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
+    transform-origin: center; /* keeps rotations natural */
 }
 
 .upper-leg3 {
-    max-width: 200px;
     position: absolute;
-    top:435px;
-    right:630px;
+    width: 36%;      /* relative to .Figure */
+    top: 39%;        /* % of .Figure height */
+    left: 14%;       /* % of .Figure width */
     transform: rotate(-8deg);
+    /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
+    transform-origin: center; /* keeps rotations natural */
 }
 
 .lower-leg3 {
-    max-width: 200px;
     position: absolute;
-    top:560px;
-    right:650px;
-
+    width: 43%;      /* relative to .Figure */
+    top: 54%;        /* % of .Figure height */
+    left: 8%;       /* % of .Figure width */
+    transform: rotate(0deg);
+    /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
+    transform-origin: center; /* keeps rotations natural */
 }
 
 .feet3 {
-    max-width: 100px;
     position: absolute;
-    top:670px;
-    right:690px;
+    width: 20%;      /* relative to .Figure */
+    top: 74%;        /* % of .Figure height */
+    left: 21.7%;       /* % of .Figure width */
+    /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
+    transform-origin: center; /* keeps rotations natural */
 }
 
 .info {
