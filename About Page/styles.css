@@ -48,7 +48,7 @@ nav a:hover{
     margin-top: 60px;
     position: relative;
     width: 100vw;
-    height: auto; /* let aspect ratio handle height */
+    height: auto;
     grid-area: content;
     display: flex;
     justify-content: center;

@@ -117,14 +117,14 @@ nav a:hover{
     top: 9%;        /* % of .Figure height */
     left: 25%;       /* % of .Figure width */
     transform: rotate(-7deg);
-    /* animation: head-lean-back 2s ease-in-out infinite; */
-    transform-origin: center; /* keeps rotations natural */
+    animation: head-lean-back 5s ease-in-out infinite;
+    transform-origin: bottom; /* keeps rotations natural */
 }
 
 @keyframes head-lean-back {
-    0%   {transform: rotate(0deg);}
-    50%  {transform: rotate(-15deg);}
-    100% {transform: rotate(0deg);}
+    0%   {transform: translateX(0vw) translateY(0vh) rotate(0deg);}
+    50%  {transform: translateX(-0.45vw) translateY(-0.5vh) rotate(-20deg);}
+    100% {transform: translateX(0vw) translateY(0vh) rotate(0deg);}
 }
 
 .torso3 {
@@ -133,7 +133,7 @@ nav a:hover{
     top: 18%;        /* % of .Figure height */
     left: 10%;       /* % of .Figure width */
     transform: rotate(-1deg);
-    /* animation: torso-lean-back 2s ease-in-out infinite; */
+    animation: torso-lean-back 5s ease-in-out infinite;
     transform-origin: center; /* keeps rotations natural */
 }
 
