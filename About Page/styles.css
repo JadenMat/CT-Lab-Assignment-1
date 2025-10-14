@@ -12,11 +12,21 @@ nav ul{
     position: fixed;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    gap: 1rem;
     align-items: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px;
+    font-size: 12px;
     z-index: 1000;
+    list-style: none;
+    padding: 2rem;
+}
+
+nav ul li:first-child{
+    margin-right: auto;
+}
+
+nav ul li:not(:first-child){
+    margin-left: 1rem;
 }
 
 nav a {
@@ -24,8 +34,6 @@ nav a {
     text-decoration: none;
 }
 
-/* used ai for this part; wanted a short term solution
-how would you go about this is js */
 nav a:hover{
     color: lightgray;
 }
@@ -59,9 +67,9 @@ nav a:hover{
 
 .animation {
     position: relative;
-    width: 80vw;          /* responsive to viewport width */
-    aspect-ratio: 16/9;   /* lock your scene ratio (adjust to match your art) */
-    max-width: 1200px;    /* optional: prevent being too big */
+    width: 80vw;
+    aspect-ratio: 16/9;
+    max-width: 1200px;
     overflow: hidden;
     background-color: white;
 }
@@ -96,16 +104,16 @@ nav a:hover{
 
 .lamp-1 {
     position: absolute;
-    width: 57.5%;      /* relative to .Figure */
-    bottom: 83%;        /* % of .Figure height */
-    left: 19.5%;       /* % of .Figure width */
+    width: 57.5%;
+    bottom: 83%;
+    left: 19.5%;
 }
 
 .Figure1 {
     position: absolute;
     width: 40%;
-    top: 20%;  /* relative to .content */
-    left: 30%; /* relative to .content */
+    top: 20%;
+    left: 30%;
     margin:0 auto;
     aspect-ratio: 3/4;
     z-index: 2;
@@ -113,12 +121,12 @@ nav a:hover{
 
 .head1 {
     position: absolute;
-    width: 20%;      /* relative to .Figure */
-    top: 38%;        /* % of .Figure height */
-    left: 30%;       /* % of .Figure width */
+    width: 20%;
+    top: 38%;
+    left: 30%;
     transform: rotate(15deg);
     /* animation: head-lean-back 2s ease-in-out infinite; */
-    transform-origin: center; /* keeps rotations natural */
+    transform-origin: center;
 }
 
 @keyframes head-lean-back {
@@ -129,12 +137,12 @@ nav a:hover{
 
 .torso1 {
     position: absolute;
-    width: 41%;      /* relative to .Figure */
-    top: 45%;        /* % of .Figure height */
-    left: 9%;       /* % of .Figure width */
+    width: 41%;
+    top: 45%;
+    left: 9%;
     transform: rotate(14deg);
     /* animation: torso-lean-back 2s ease-in-out infinite; */
-    transform-origin: center; /* keeps rotations natural */
+    transform-origin: center;
 }
 
 @keyframes torso-lean-back {
@@ -145,101 +153,101 @@ nav a:hover{
 
 .upper-right-arm1 {
     position: absolute;
-    width: 22%;      /* relative to .Figure */
-    top: 52%;        /* % of .Figure height */
-    left: 28%;       /* % of .Figure width */
+    width: 22%;
+    top: 52%;
+    left: 28%;
     transform: rotate(25deg);
     /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
-    transform-origin: center; /* keeps rotations natural */
+    transform-origin: center;
 }
 
 .lower-right-arm1 {
     position: absolute;
-    width: 20%;      /* relative to .Figure */
-    top: 62%;        /* % of .Figure height */
-    left: 38%;       /* % of .Figure width */
+    width: 20%;
+    top: 62%;
+    left: 38%;
     transform: rotate(55deg);
     /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
-    transform-origin: center; /* keeps rotations natural */
+    transform-origin: center;
 }
 
 .right-hand1 {
     position: absolute;
-    width: 10%;      /* relative to .Figure */
-    top: 70%;        /* % of .Figure height */
-    left: 53%;       /* % of .Figure width */
+    width: 10%;
+    top: 70%;
+    left: 53%;
     transform: rotate(80deg);
     /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
-    transform-origin: center; /* keeps rotations natural */
+    transform-origin: center;
 }
 
 .stick1 {
     position: absolute;
-    width: 40%;      /* relative to .Figure */
-    top: 64%;        /* % of .Figure height */
-    left: 58%;       /* % of .Figure width */
+    width: 40%;
+    top: 64%;
+    left: 58%;
     transform: rotate(65deg);
     /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
-    transform-origin: center; /* keeps rotations natural */
+    transform-origin: center;
 }
 
 .upper-left-arm1 {
     position: absolute;
-    width: 18%;      /* relative to .Figure */
-    top: 52%;        /* % of .Figure height */
-    left: 31%;       /* % of .Figure width */
+    width: 18%;
+    top: 52%;
+    left: 31%;
     transform: rotate(10deg);
     /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
-    transform-origin: center; /* keeps rotations natural */
+    transform-origin: center;
 }
 
 .lower-left-arm1 {
     position: absolute;
-    width: 18%;      /* relative to .Figure */
-    top: 54%;        /* % of .Figure height */
-    left: 36%;       /* % of .Figure width */
+    width: 18%;
+    top: 54%;
+    left: 36%;
     transform: rotate(-50deg);
     /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
-    transform-origin: center; /* keeps rotations natural */
+    transform-origin: center;
 }
 
 .left-hand1 {
     position: absolute;
-    width: 12%;      /* relative to .Figure */
-    top: 48%;        /* % of .Figure height */
-    left: 40%;       /* % of .Figure width */
+    width: 12%;
+    top: 48%;
+    left: 40%;
     transform: rotate(65deg) scaleX(-1);
     /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
-    transform-origin: center; /* keeps rotations natural */
+    transform-origin: center;
 }
 
 .upper-leg1 {
     position: absolute;
-    width: 37%;      /* relative to .Figure */
-    top: 56%;        /* % of .Figure height */
-    left: 16%;       /* % of .Figure width */
+    width: 37%;
+    top: 56%;
+    left: 16%;
     transform: rotate(10deg);
     /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
-    transform-origin: center; /* keeps rotations natural */
+    transform-origin: center;
 }
 
 .lower-leg1 {
     position: absolute;
-    width: 42%;      /* relative to .Figure */
-    top: 56%;        /* % of .Figure height */
-    left: 23%;       /* % of .Figure width */
+    width: 42%;
+    top: 56%;
+    left: 23%;
     transform: rotate(5deg);
     /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
-    transform-origin: center; /* keeps rotations natural */
+    transform-origin: center;
 }
 
 .feet1 {
     position: absolute;
-    width: 20%;      /* relative to .Figure */
-    top: 74%;        /* % of .Figure height */
-    left: 35.5%;       /* % of .Figure width */
+    width: 20%;
+    top: 74%;
+    left: 35.5%;
     /* animation: upper-right-arm-swing 2s ease-in-out infinite; */
-    transform-origin: center; /* keeps rotations natural */
+    transform-origin: center;
 }
 
 .info {
